@@ -1,0 +1,189 @@
+   
+\documentclass[12pt]{article}
+\renewcommand{\baselinestretch}{1.05}
+\usepackage{amsmath,amsthm,verbatim,amssymb,amsfonts,amscd, graphicx}
+\usepackage{graphics}
+\topmargin0.0cm
+\headheight0.0cm
+\headsep0.0cm
+\oddsidemargin0.0cm
+\textheight23.0cm
+\textwidth16.5cm
+\footskip1.0cm
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem*{surfacecor}{Corollary 1}
+\newtheorem{conjecture}{Conjecture} 
+\newtheorem{question}{Question} 
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\usepackage{graphicx}
+\graphicspath{{}}
+\usepackage{cite}
+%\usepackage[backend=bibtex]{biblatex}
+%\addbibresource{listb.bib}
+ \begin{document}
+ 
+
+\title{Ultra High Energy Neutrino Detection with ANITA}
+\author{Keith McBride}
+\maketitle
+\begin{abstract}
+	In this section, answer four things: 1) why this paper/topic is interesting 2) what question this paper is answering 3) what approach it uses to answer that question 4) results of the approach. These do not have to be in this order.
+\end{abstract}
+\tableofcontents
+\section{Introduction}
+\hspace{0.2in} UHE fluxes are predicted from interactions of verified UHECR with the cosmic microwave background through the GZK effect as by products. These are BZ neutrinos (cite). Other extrasolar sources for UHE neutrinos (cite) such as pulsars and GRB's. Violent astrophysical phenomena. These predicted fluxes are within reach by multiple experiments. Detecting these (UHE) neutrinos may be difficult because of their low flux. However, they interact via the weak interaction (exchange of W and Z bosons) only, so they are also important to probing the hadronic processes inside of opaque sources. Finally, the property of neutrinos to interact weakly also allows for directly locating the source, whereas photons and cosmic rays will interact through EM and be deflected so that their source location is lost. 
+\begin{figure}[h]
+	\includegraphics[scale=0.85, angle=270]{"overview plot of big bang"}
+	\centering
+	\caption{Temperature versus time for the Big Bang Model \cite{Yagi:2005yb}}
+	\centering
+\end{figure}
+\subsection{Expansion Rate}
+\hspace{0.2in} In General Relativity, the zero-zero component of the Einstein equations using the Robertson-Walker Metric is called the Friedmann equation: 
+\begin{equation}
+G_{\mu\nu}=8 \pi G T_{\mu\nu} \rightarrow G_{00}=8\pi G T_{00}
+\end{equation}
+The left hand side gives the fraction $3\frac{\dot{R^2}}{R^2}$ in the case of a flat universe. It follows that
+\begin{equation}
+H\equiv\frac{\dot{R}}{R}=\sqrt{\frac{8\pi G \epsilon}{3}}
+\end{equation} 
+where $H$ defines the expansion rate of the universe and $\epsilon$ is the energy density. However, $\epsilon$ is a dynamical quantity (therefore, so is the expansion rate). During the period when the universe went through its most notable transitions, its energy density was radiation dominated. In other words, the particles that contributed the most energy density were relativistic. As shown in the next section, the energy density for relativistic particles scales as $T^4$ (temperature to the fourth power). Thus the expansion rate will scale as $T^2$ in this era.
+\subsection{Thermodynamics}
+\hspace{0.2in} Since $H$ depends on the energy density, an understanding of this latter quantity is important. As we will see in the next section, a good assumption in computing the energy density is that the microscopic particles that make up the phase are in thermal equilibrium. So a review of the related thermodynamics of particles in thermal equilibrium is necessary. Each fundamental particle of the standard model will contribute a number of degrees of freedom, $\nu$, as determined by quantities such as spin, flavor, color, polarization, etc. The number and energy density of non-relativistic and non-degenerate particles (bosons and fermions) is approximated to first order here: 
+\begin{align*}
+n\approx&\nu\left(\frac{mT}{2\pi}\right)^{\frac{3}{2}}e^{\frac{\mu-m}{T}}   \\ \epsilon\approx& mn 
+\end{align*}
+For relativistic particles (subscript $b$ for bosons and subscript $f$ for fermions), the number and energy density are analytically known:\begin{equation}
+n_b=\frac{\nu\zeta(3){T}^3}{{\pi}^2},
+\end{equation}
+\begin{equation}
+n_f=\frac{3}{4}\frac{\nu\zeta(3){T}^3}{{\pi}^2},
+\end{equation}
+\begin{equation}
+\epsilon_b=\frac{\nu{\pi}^2{T}^4}{30},
+\end{equation}
+\begin{equation}
+\epsilon_f=\frac{7}{8}\frac{\nu{\pi}^2{T}^4}{30}.
+\end{equation}
+The factor of $\frac{7}{8}$ for the fermion energy density is very important. This prefactor arises in the integration of the Fermi-Dirac distribution in the relativistic limit. Compared to the Bose-Einstein distribution, which blows up at low energy for non zero temperature, the Pauli Exclusion Principle prevents fermions from occupying the same states. Thus, the energy density of fermions provides some fraction of that possible compared to bosons. In addition to these formulae, the conservation of entropy in Local Thermal Equilibrium (LTE) will be used.
+\subsection{Coupling and Decoupling}
+\hspace{0.2in} Here we justify the use of thermal equilibrium for the energy density.  A kinetic definition for the particles to be in equilibrium is the requirement that the collision rate of the particles is larger than the expansion rate of the universe. The expansion of the universe and the interactions compete to drive the system out of or maintain thermal equilibrium. If collisions among the particles happen fast enough, the expansion happens adiabatically, and the universe is in LTE even as it expands. 
+
+A particle species is coupled to another if it has an interaction rate, $\Gamma$, greater than $H$. As the universe expands, the temperature drops, and some particles that were relativistic become non-relativistic. This changes the energy density of the universe, which is dominated by relativistic particles. In this way, the number of thermally excitable degrees of freedom changes. A species of particle becomes decoupled when its interaction rate drops below the expansion rate. This is called the "freezing out" of a species. Figure 2 is a rough outline of the decoupling of the relativistic degrees of freedom of the universe versus its temperature. One example is the step around $T\approx200$ MeV which corresponds to a first order phase transition of the Quark-Gluon Plasma to the hadronic gas, using the now outdated "MIT Bag model". The rest of this paper describes the various decoupling stages. 
+\begin{figure}[h]
+	\includegraphics[scale=0.75, angle=270]{"freeze out"}
+	\centering
+	\caption{Relativistic Degrees of freedom versus Temperature. Note the kink around $200$ MeV ~\cite{Kolb:1990vq}}
+	\centering
+\end{figure}
+\section{Early Stages of the Universe}
+\subsection{"The Beginning": $T>300$ GeV}
+\hspace{0.2in} There are many transitions predicted in supersymmetry and other Grand Unified Theories at temperatures higher than the mass of the heaviest of all the fundamental particles in the Standard Model. "The Beginning" is obviously a relative term in this model because it cannot predict what happened at or before The Big Bang. However, in the Standard Model of Particle Physics, the time after the "bang" when the first freeze out occurs is $t\approx10^{-11}{\mu}s$, given by the spontaneous symmetry breaking of the electroweak force. After the "bang", the universe was a hot, dense collection of all the fundamental particles of the Standard Model. At $T\approx$ 300GeV, they are all relativistic, giving the total degrees of freedom as $\nu=106.75$ \cite{Kolb:1990vq} using the $\frac{7}{8}$ factor for fermions. Throughout the radiation era, the time-temperature relation for the universe is \begin{equation}
+t\approx\left(\frac{1 MeV}{T}\right)^2 \mathrm{seconds}
+\end{equation}
+\subsection{$300$ \,GeV $>T\gtrsim1$ \,GeV}
+\hspace{0.2in} As the universe expands, its temperature drops and soon those particles that were relativistic become non-relativistic. Below the temperature of about the mass of the charm quark, many degrees of freedom have frozen out. These include the Higgs, W and Z bosons, the tau, and the charm, top and bottom quarks. $\nu$ at this stage is $61.75$. At the point where the temperature drops below $1$ \,GeV the universe is about a microsecond old. 
+\section{Quark-Gluon Plasma and the Quark-Hadron Phase Transition}
+\subsection{Quark-Gluon Plasma}
+\hspace{0.2in} For temperatures below the mass of the charm quark but above about $150$ \,MeV, the universe is still a sea of fundamental interacting particles. The temperature of this phase is hot enough to allow for deconfinement of quarks and gluons. From Lattice QCD calculations, the transition temperature of quark-gluon plasma (QGP) to a hadronic phase is around $150$ MeV. The study of Relativistic Heavy Ion collisions probes this environment. However, the dynamics that govern the expansion of the QGP created in heavy ion collisions is completely different than those of the QGP in the earlier stages of the universe. The QGP's created in colliders expand from the longitudinal and transverse pressure gradients, whereas the cosmological QGP has an expansion rate given by that of the universe
+\begin{equation}
+T\sim\frac{1}{R}
+\end{equation}
+This inverse relation holds for phases of relativistic particles in thermal equilibrium (entropy is conserved). The entropy is a constant, but the entropy density depends on $T^3$.
+\subsection{The QCD Phase Transition}
+\hspace{0.2in} Using different models, the transition from QGP to hadronic gas is an active research field. The idea is that, as the universe expanded, the temperature decreased, forcing confinement of the quarks and gluons to hadrons. At some critical temperature, where the mixture reaches a critical density, the particles hadronize. Only about 10 microseconds have passed since the "bang" by the time the universe cools below this critical temperature.
+
+\section{Primordial Nucleosynthesis}
+\subsection{Ideas}
+\hspace{0.2in} Once the quark-hadron transition completes, the universe has non-relativistic hadrons (the lightest, pions, have mass of $140$ \,MeV), which are interacting with relativistic particles: photons, neutrinos, and electrons. These interactions are in thermal equilibrium until they decouple. In thermal equilibrium, nuclear abundances (neutrons, protons, and heavier nuclei) can be modeled using mass fractions. Introducing the baryon-to-photon ratio, $\eta\sim 10^{-10}$, the baryon fraction of nuclei with mass $A\geq2$ and charge $Z$ is given by \cite{Kolb:1990vq}
+\begin{equation}
+\chi_A=A^{\frac{5}{2}}\nu_A\zeta(3)^{A-1}\eta^{A-1}\pi^{\frac{1}{2}(A-1)}2^{\frac{1}{2}(3A-5)}\left(\frac{T}{m_n}\right)^{\frac{3}{2}(A-1)}\exp^{\frac{B_A}{T}}{\chi_p}^{Z}{\chi_n}^{A-Z}.
+\end{equation}
+The neutron-to-proton ratio is given in chemical equilibrium as
+\begin{equation}
+\frac{n_{n}}{n_{p}}\equiv\frac{\chi_{n}}{\chi_{p}}=\exp^{-\frac{Q}{T}},
+\end{equation}
+where $Q\approx1.3$ MeV is the difference in mass between the neutron and proton. Specifically, the interactions between the neutrons and the protons eventually freeze out, and a good assumption is that the neutron-to-proton ratio just before is maintained afterwards for a period of time. The temperature of this freezing out (discussed in the neutrino decoupling section) puts the ratio at about $\frac{1}{6}$. 
+\subsection{Specific stages}
+\hspace{0.2in} Applying the above formulae to the temperatures of $10$ and $1$ MeV, the mass density fraction contributed by $A=2$ nuclei for both temperatures is the same value, about $10^{-13}$ . In addition, due to the neutron decay of $\sim900s$, the neutron-to-proton ratio drops from its equilibrium value to about $\frac{1}{7}$. A plot of these abundances in relation to hydrogen is given below. Note that the temperature of $0.1$ MeV puts the age of the universe at about $100s$. 
+\begin{figure}[h]
+\includegraphics[scale=0.55]{"mass fractions"}
+\centering
+\caption{Fraction of nuclei with mass $A$ versus time after the "bang" \cite{Kolb:1990vq}.}
+\centering
+\end{figure}
+\section{Neutrino Decoupling and photon reheating}
+\subsection{Neutrino Decoupling}
+\hspace{0.2in} During primordial nucleosynthesis, the temperature drops to a critical value in which the neutrinos are no longer coupled to the photons, hadrons and electrons. The weak interaction that keeps the neutrons and protons in chemical equilibrium freezes out at this stage. This is an important transition for this reason and estimates place this freeze-out event at $1$ MeV. Neutrinos interact with a cross-section proportional to the square of the temperature and the square of the Fermi constant. The density of the particles with which neutrinos interact (assuming relativistic) scales as the temperature cubed. 
+\begin{align*}
+\sigma\sim{G_F}^2{T^2} \ ; \ n\sim{T^3}
+\end{align*}
+Finally, the interaction rate will then be proportional to the temperature to the fifth power (assuming the average relative velocity is close to the speed of light, independent of $T$). Comparing this with equation (2) where energy density is given by equations (5) and (6), a limit on the temperature for thermal equilibrium can be derived:
+\begin{align*}
+H <& \ \Gamma \\
+\sqrt{G} T^2 <& \ \sigma n v \\
+\frac{T^2}{m_{Pl}} <& \ {G_F}^2{T^5}\\
+\end{align*}
+Now the constants here that set the scale are the Planck mass and the Fermi constant. Plugging in these values in units of GeV gives,
+\begin{align*}
+m_{Pl}\approxeq 10^{19} GeV \ ; G_{F}\approxeq(300 GeV)^{-2} \ ; T^{\left(\nu\right)}_{dec}\simeq 1 MeV
+\end{align*}
+As the universe cooled past this temperature, the neutrinos decoupled. The continued expansion of the universe continues to drop the neutrino temperature via equation (8).
+\subsection{Photon Cooling suppression}
+\hspace{0.2in} Once the universe cools to about the rest mass of the electron ($m_e$), there is a slight impedance of the cooling of the photon phase. This is a consequence of the transfer of entropy from the relativistic positron and electron pairs annihilating into photons. The argument is that pair production will occur for photons above the temperature of the rest mass of the electron. Once the temperature cools and the average photon doesn't have enough energy to pair produce, electrons will no longer spontaneously appear. The pairs of electrons and positrons in the universe annihilate and do not come back (although not all the electrons because there were slightly more electrons than positrons).
+
+\hspace{0.2in} Now, if the electrons were in thermal equilibrium with the photons just before, then entropy should be conserved. Thus, the photons just after the temperature has dropped below $m_e$ will have as much entropy as the phase (electrons and photons) just before. Assuming the size of the universe stays roughly the same, this transition allows the photon-only phase to have cooled down at a slower rate than $T\sim\frac{1}{R}$. The neutrinos that are not interacting have continued to drop in temperature, and so the photons and the neutrinos will have a factor difference in their temperature, related to this transfer of entropy from electrons to photons. The temperature difference will be discussed in more detail at the end. 
+\section{Recombination and photon decoupling}
+\subsection{Recombination}
+\hspace{0.2in} The continual drop in temperature allows for the resulting plasma of protons, neutrons, nuclei, and electrons to eventually form neutral atoms. The nuclei of these atoms were made during primordial nucleosynthesis since stars have yet to form. Eventually, the temperature of the plasma drops enough to allow electrons and protons to recombine. Estimates using the Saha equation \cite{Kolb:1990vq}
+\begin{equation}
+\frac{1-\chi_e}{{\chi_e}^2}=4\sqrt{\frac{2}{\pi}}\eta\zeta(3)(\frac{T}{m_e})^{\frac{3}{2}}e^{\frac{E_b}{T}}
+\end{equation}
+allow the modeling of a plasma's free electron ratio related to temperature and the binding energy of the atoms. Defining recombination as a stage when $\chi_{e}=0.9$ (assuming only hydrogen binding energy) yields a temperature of $3500K$. The neutral Hydrogen has been created and star formation occurs millions of years later. 
+\subsection{Photon Decoupling}
+\hspace{0.2in}Soon after the recombination stage, the photons decouple from the now electrically neutral matter in the universe. Around this transition, the universe becomes matter dominated and so its temperature-expansion rate relation changes. Estimates of the beginning of the matter dominated era put the age of the universe at about $600,000$ years. The photons are kept in equilibrium through Thomson scattering until around the temperature of $3000$ K. Once this interaction rate falls below the expansion rate, the universe is optically transparent. The next section discusses the observations today from this prediction, called the Cosmic Microwave Background. 
+\section{Today}
+\hspace{0.2in} Finally, the clumps of matter have formed gas and stars and those stars have created heavier elements via stellar nucleosynthesis. However, the neutrinos and photon that decoupled still exist and have continued to drop in temperature. The photons that decoupled are dubbed the CMB, and have been redshifted enough to give a wavelength of $0.3$ cm \cite{Penzias:1965wn}.
+Now, the neutrino background had decoupled as well, but then there was a reheating of the photons. The conservation of entropy slightly impeded the drop in temperature of the photons, and so the temperatures of the photons and the neutrinos are related below.
+\begin{align*}
+S_{before}=& S_{after} \\
+s_{before}V=& s_{after}V \\
+\nu_{before} T_{before}^{3}=&\nu_{after} T_{after}^{3}
+\end{align*}
+Now the relativistic degrees of freedom are
+\begin{align*}
+\nu_{before} =& \nu_{photons}+\nu_{electrons} \\
+\nu_{after} =& \nu_{photons} \\
+\nu_{photons}=& 2 \\
+\nu_{electrons}=& \frac{7}{8} (2\cdot2) = \frac{7}{2}
+\end{align*}
+Thus, utilizing $T_{\nu}=T_{before}$ 
+\begin{align*}
+\frac{T_{after}}{T_{\nu}}=&\left(\frac{11}{4}\right)^{\frac{1}{3}}
+\end{align*}
+The value for $T_{after}$ is the cosmic microwave background temperature which is today about $2.7K$ \cite{Penzias:1965wn}, so today's temperature of the neutrino background is predicted at:
+
+\begin{align*}
+T\simeq 1.9K .
+\end{align*}
+Thus, the neutrinos that froze out from the Big Bang would have an average thermal motion energy of $1.6$ meV. The estimated energy density of this total background (neutrino and microwave) is 
+\begin{align*}
+\epsilon_{total}=\epsilon_{neutrinos}+\epsilon_{photons}
+\end{align*}
+By inserting factors of $\frac{hc}{2\pi}$ to convert to SI units, the energy density is
+\begin{align*}
+\epsilon_{total}\sim  7*10^{-34}\frac{g}{cm^{3}}
+\end{align*}
+This is roughly the rest mass energy of five humans in a cube of length of one Astronomical Unit in each direction. The age of the universe today is 13.7 billion years. 
+
+\section{References}
+\bibliography{reflist}{}
+\bibliographystyle{unsrt}
+ 
+ 
+\end{document}
